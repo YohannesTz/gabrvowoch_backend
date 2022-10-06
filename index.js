@@ -32,6 +32,6 @@ app.post("/jokes", async(req, res) => {
     return res.status(201).json(insertedJoke);
 })
 
-app.listen(3000, () => {
-    console.log(`Server Started at ${3000}`)
+app.listen(port, () => {
+    console.log(`Server Started at ${port}`)
 })
