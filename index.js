@@ -26,9 +26,13 @@ database.once('connected', () => {
     console.log('Database Connected');
 })
 
+app.get("/", async(req,res) => {
+    return res.status(200).json("Server is running!");
+});
+
 app.get("/getJokes", async(req,res) => {
     return res.status(200).json("get jokes works!");
-}
+});
 
 app.get("/jokes", async(req, res) => {
     const allJokes = await Joke.find();
