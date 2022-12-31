@@ -1,3 +1,8 @@
+# Gabrovowoch backend
+backend for an upcoming app on gabrovo jokes.
+
+# Sepcifications
+
 | Route | Method | Params | Description |
 |---|---|---|---|
 | /  | GET  | none  | Just to check if the server is running  |
