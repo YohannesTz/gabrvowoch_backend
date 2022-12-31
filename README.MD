@@ -1,7 +1,7 @@
 # Gabrovowoch backend
 backend for an upcoming app on gabrovo jokes.
 
-# Sepcifications
+# Specifications
 
 | Route | Method | Params | Description |
 |---|---|---|---|
