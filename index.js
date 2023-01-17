@@ -39,6 +39,10 @@ app.get("/jokes", async(req, res) => {
     return res.status(200).json(allJokes);
 });
 
+app.get("/jokess", async(req,res) => {
+    
+})
+
 app.post("/jokes", async(req, res) => {
     const newJoke = new Joke({...req.body});
     const insertedJoke = await newJoke.save();
