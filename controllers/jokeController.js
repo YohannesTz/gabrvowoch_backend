@@ -105,8 +105,6 @@ jokeController.getRandomJoke = async (req, res) => {
 jokeController.getJokeById = async(req, res) => {
   const id = req.params.id;
 
-  console.log(id);
-
   if(!id){
     return res.json({
       success: false,
@@ -116,10 +114,8 @@ jokeController.getJokeById = async(req, res) => {
   }
 
   try {
-    const joke = await prisma.joke.findMany({
-      where: {
-        id
-      }
+    const joke = await prisma.joke.findUnique({
+      where: {id}
     })
 
     res.json({
