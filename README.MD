@@ -1,11 +1,20 @@
 # Gabrovowoch backend
-backend for an upcoming app on gabrovo jokes.
 
-# Specifications
+Backend for an upcoming app on gabrovo jokes.
 
-| Route | Method | Params | Description |
-|---|---|---|---|
-| /  | GET  | none  | Just to check if the server is running  |
-| /getJokes  | GET  | NONE  | Idk  |
-| /jokes  | GET  | none  | Returns all jokes in the database  |
-| /jokes  | POST  | Body:{ title, content }  | Create a new joke  |
+## Usage
+
+First try to get free api_key using the [web app](https://gabrovowoch.vercel.app/) then use the endpoints listed below by combining the base url with the specified route url.
+
+<b>Base URL: </b>https://gabrovowoch-backend.onrender.com/
+
+### Endpoints
+
+| Endpoints     | Request type | Param/Body                                          | Response                            | URL                                          |
+|---------------|--------------|-----------------------------------------------------|-------------------------------------|----------------------------------------------|
+| Signup        | POST         | Body: { username, email, password }                 | { token, user }                     | /api/signup                                  |
+| Login         | POST         | Body: { username, password }                        | { token, user }                     | /api/login                                   |
+| AddJoke       | POST         | Body: { title, description, likes }  Query: api_key | { id, title, description, likes }   | /api/add?api_key=api_key                     |
+| GetAllJokes   | GET          | Query: skip, take, api_key                          | [{ id, title, description, likes }] | /api/all?skip=skip&take=take&api_key=api_key |
+| GetRandomJoke | GET          | Query: api_key                                      | { id, title, description, likes }   | /api/random?api_key=api_key                  |
+| GetJokeById   | GET          | Param: id  Query: api_key                           | { id, title, description, likes }   | /api/joke/:id?api_key=api_key                |
