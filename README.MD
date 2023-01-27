@@ -18,3 +18,4 @@ First try to get free api_key using the [web app](https://gabrovowoch.vercel.app
 | GetAllJokes   | GET          | Query: skip, take, api_key                          | [{ id, title, description, likes }] | /api/all?skip=skip&take=take&api_key=api_key |
 | GetRandomJoke | GET          | Query: api_key                                      | { id, title, description, likes }   | /api/random?api_key=api_key                  |
 | GetJokeById   | GET          | Param: id  Query: api_key                           | { id, title, description, likes }   | /api/joke/:id?api_key=api_key                |
+| Like          | PUT          | Param: id  Query: api_key                           | { id, title, description, likes }   | /api/like/:id?api_key=api_key

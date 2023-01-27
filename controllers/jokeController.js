@@ -163,6 +163,12 @@ jokeController.like = async(req, res) => {
       }
     })
 
+    res.json({
+      success: true,
+      data: joke,
+      error: null
+    })
+
   } catch (error) {
     console.log(error);
     return res.json({
