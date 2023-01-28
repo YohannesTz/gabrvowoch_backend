@@ -133,4 +133,50 @@ jokeController.getJokeById = async(req, res) => {
   }
 }
 
+jokeController.like = async(req, res) => {
+   const id = req.params.id;
+
+   if(!id){
+    return res.json({
+      success: false,
+      data: null,
+      error: { msg: "Please enter all fields!!" },
+    });
+  }
+
+  try {
+    const joke = await prisma.joke.findMany({
+      where: {
+        id
+      }
+    })
+
+    let likee = joke[0].likes;
+    likee++;
+
+    await prisma.joke.update({
+      where: {
+        id
+      },
+      data: {
+        likes: likee
+      }
+    })
+
+    res.json({
+      success: true,
+      data: joke,
+      error: null
+    })
+
+  } catch (error) {
+    console.log(error);
+    return res.json({
+      success: false,
+      data: null,
+      error: error.meta || { msg: "Error occurred check server log!" },
+    });
+  }
+} 
+
 module.exports = jokeController;

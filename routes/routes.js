@@ -17,5 +17,7 @@ route.get("/random", middlewares.auth_api_key, jokeController.getRandomJoke);
 
 route.get("/joke/:id", middlewares.auth_api_key, jokeController.getJokeById);
 
+route.put("/like/:id", middlewares.auth_api_key, jokeController.like);
+
 
  module.exports = route;
